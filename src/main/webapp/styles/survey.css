@@ -1,66 +1,131 @@
-@charset "UTF-8";
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+/* Reset cơ bản */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+body { 
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .container {
-    max-width: 600px;
-    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+form {
     background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    max-width: 480px;
+    width: 100%;
 }
 
 .logo {
     display: block;
-    margin: 0 auto 20px auto;
-    max-width: 200px;
+    margin: 0 auto 1.5rem auto;
+    max-width: 140px;
 }
 
-h1, h2 {
-    color: #333;
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+img {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    max-width: 140px;
+}
+
+/* Heading */
+h1 {     
+    font-size: 1.8rem;
+    color: #00796B;
+    margin-bottom: 1rem;    
     text-align: center;
+}
+h2 {     
+    font-size: 1.3rem;
+    color: #00796B;
+    margin: 1.5rem 0 0.8rem 0;   
+}
+
+/* Text & labels */
+p {
+    margin: 0.6rem 0;
+    line-height: 1.5;
 }
 
 label {
-    display: inline-block;
-    width: 120px;
-    margin-top: 10px;
+    display: block;           /* label chiếm nguyên 1 dòng */
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    text-align: left;         /* căn trái trong form */
 }
 
-input[type="text"],
-input[type="email"],
-input[type="date"],
+input[type="text"], 
+input[type="email"], 
+input[type="date"], 
 select {
-    width: calc(100% - 130px);
-    padding: 8px;
-    margin-top: 10px;
+    width: 100%;
+    padding: 0.7rem 0.9rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+input:focus, select:focus {
+    border-color: #00796B;
+    box-shadow: 0 0 6px rgba(0,121,107,0.4);
+    outline: none;
 }
 
-input[type="submit"], 
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 16px;
-    background: #0073e6;
+/* Radio & Checkbox */
+input[type="radio"], 
+input[type="checkbox"] {
+    accent-color: #00796B;   /* Hiệu ứng màu hiện đại */
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    background: linear-gradient(135deg, #009688, #00796B);
     color: #fff;
     border: none;
-    border-radius: 4px;
+    padding: 0.9rem;
+    border-radius: 10px;
+    font-size: 1rem;
     cursor: pointer;
-    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #00796B, #004D40);
+    transform: translateY(-2px);
 }
 
-input[type="submit"]:hover,
-.btn:hover {
-    background: #005bb5;
+/* Footer */
+div {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
 }
 
-p {
-    margin: 8px 0;
+div p:first-child {
+    font-weight: 600;
 }
